@@ -1,0 +1,4 @@
+Bacterial_blight
+Blast
+Brown_Spot
+Tungro
