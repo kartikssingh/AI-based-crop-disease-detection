@@ -2,242 +2,242 @@
   "tomato": {
     "Tomato_mosaic_virus": {
       "cause": [
-        "टमाटर मोज़ेक वायरस (ToMV) के कारण होता है",
-        "संक्रमित बीजों, औजारों, हाथों और पौधों के संपर्क से फैलता है",
-        "अत्यधिक स्थिर वायरस जो सतहों पर लंबे समय तक जीवित रहता है"
+        "Tamatar mosaic virus (ToMV) ke karan hota hai",
+        "Sankramit beejon, auzaron, hathon aur paudhon ke sampark se phailta hai",
+        "Atyadhik sthir virus jo satahon par lambe samay tak jeevit rehta hai"
       ],
       "cure": [
-        "वायरल संक्रमण के लिए कोई सीधा रासायनिक इलाज उपलब्ध नहीं है",
-        "संक्रमित पौधों को तुरंत हटा दें और नष्ट कर दें",
-        "औजारों को 10% ब्लीच के घोल से कीटाणुरहित करें"
+        "Viral sankraman ke liye koi seedha rasayanik ilaaj uplabdh nahi hai",
+        "Sankramit paudhon ko turant hata dein aur nasht kar dein",
+        "Auzaron ko 10% bleach ke ghol se kitanurahit karein"
       ],
       "suggestions": [
-        "प्रमाणित वायरस-मुक्त बीजों का उपयोग करें",
-        "गीले होने पर पौधों को छूने से बचें",
-        "खेत की स्वच्छता का सख्ती से पालन करें",
-        "प्रतिरोधी टमाटर की किस्में उगाएं",
-        "फसल चक्र अपनाएं और खेती से पहले तंबाकू को छूने से बचें"
+        "Pramanit virus-mukt beejon ka upyog karein",
+        "Geele hone par paudhon ko chhune se bachein",
+        "Khet ki swachhta ka sakhti se palan karein",
+        "Pratirodhi tamatar ki kismein ugayein",
+        "Fasal chakra apnayein aur kheti se pehle tambaku ko chhune se bachein"
       ]
     },
     "Target_Spot": {
       "cause": [
-        "कवक कोरीनेस्पोरा कैसिकोला के कारण होता है",
-        "उच्च आर्द्रता और गर्म तापमान में पनपता है",
-        "हवा और बारिश के छींटों से फैलता है"
+        "Kavak Corynespora cassiicola ke karan hota hai",
+        "Ucch aardrata aur garam taapman mein panapta hai",
+        "Hawa aur barish ke chheenton se phailta hai"
       ],
       "cure": [
-        "क्लोरोथालोनिल या मैंकोज़ेब जैसे कवकनाशी (फंगीसाइड) का छिड़काव करें",
-        "संक्रमण को कम करने के लिए संक्रमित पत्तियों को हटा दें"
+        "Chlorothalonil ya Mancozeb jaise kavak-nashi (fungicide) ka chhidkav karein",
+        "Sankraman ko kam karne ke liye sankramit pattiyon ko hata dein"
       ],
       "suggestions": [
-        "हवा का अच्छा संचार सुनिश्चित करें",
-        "ऊपर से सिंचाई (ओवरहेड इरिगेशन) से बचें",
-        "रोगमुक्त बीजों का उपयोग करें",
-        "फसल चक्र का पालन करें"
+        "Hawa ka accha sanchar sunishchit karein",
+        "Upar se sinchai (overhead irrigation) se bachein",
+        "Rog-mukt beejon ka upyog karein",
+        "Fasal chakra ka palan karein"
       ]
     },
     "Bacterial_spot": {
       "cause": [
-        "ज़ैंथोमोनास प्रजाति के कारण होता है",
-        "बारिश के छींटों, दूषित औजारों और बीजों के माध्यम से फैलता है"
+        "Xanthomonas prajati ke karan hota hai",
+        "Barish ke chheenton, dooshit auzaron aur beejon ke madhyam se phailta hai"
       ],
       "cure": [
-        "कॉपर-आधारित जीवाणुनाशक (सीमित प्रभावशीलता)",
-        "संक्रमित पौधों को हटा दें"
+        "Copper-aadharit jivanu-nashak (seemit prabhavsheelta)",
+        "Sankramit paudhon ko hata dein"
       ],
       "suggestions": [
-        "प्रतिरोधी किस्मों का उपयोग करें",
-        "गीले खेतों में काम करने से बचें",
-        "औजारों को कीटाणुरहित करें",
-        "पौधों के बीच उचित दूरी बनाए रखें"
+        "Pratirodhi kismon ka upyog karein",
+        "Geele kheton mein kaam karne se bachein",
+        "Auzaron ko kitanurahit karein",
+        "Paudhon ke beech uchit doori banaye rakhein"
       ]
     },
     "Tomato_Yellow_Leaf_Curl_Virus": {
       "cause": [
-        "टमाटर येलो लीफ कर्ल वायरस (TYLCV) के कारण होता है",
-        "सफेद मक्खियों (व्हाइटफ्लाइज़) द्वारा फैलता है"
+        "Tamatar yellow leaf curl virus (TYLCV) ke karan hota hai",
+        "Safed makkhiyon (whiteflies) dwara phailta hai"
       ],
       "cure": [
-        "संक्रमण होने के बाद कोई इलाज नहीं है",
-        "संक्रमित पौधों को हटा दें",
-        "सफेद मक्खी की आबादी को नियंत्रित करें"
+        "Sankraman hone ke baad koi ilaaj nahi hai",
+        "Sankramit paudhon ko hata dein",
+        "Safed makkhi ki abadi ko niyantrit karein"
       ],
       "suggestions": [
-        "कीट-रोधी जाल का उपयोग करें",
-        "सफेद मक्खी के नियंत्रण के लिए नीम का तेल या इमिडाक्लोप्रिड का प्रयोग करें",
-        "प्रतिरोधी संकर किस्में लगाएं",
-        "फसल चक्रों को ओवरलैप करने से बचें"
+        "Keet-rodhi jaal ka upyog karein",
+        "Safed makkhi ke niyantran ke liye neem ka tel ya Imidacloprid ka prayog karein",
+        "Pratirodhi sankar kismein lagayein",
+        "Fasal chakron ko overlap karne se bachein"
       ]
     },
     "Late_blight": {
       "cause": [
-        "फाइटोफ्थोरा इन्फेस्टन्स के कारण होता है",
-        "ठंडी और गीली परिस्थितियों में पनपता है"
+        "Phytophthora infestans ke karan hota hai",
+        "Thandi aur geeli paristhitiyon mein panapta hai"
       ],
       "cure": [
-        "मेटालेक्सिल या मैंकोज़ेब जैसे कवकनाशी का प्रयोग करें",
-        "संक्रमित पौधों को नष्ट कर दें"
+        "Metalaxyl ya Mancozeb jaise kavak-nashi ka prayog karein",
+        "Sankramit paudhon ko nasht kar dein"
       ],
       "suggestions": [
-        "पानी के जमाव से बचें",
-        "प्रतिरोधी किस्मों का उपयोग करें",
-        "मौसम आधारित रोग अलर्ट पर नज़र रखें",
-        "स्वयं उगने वाले पौधों को हटा दें"
+        "Pani ke jamav se bachein",
+        "Pratirodhi kismon ka upyog karein",
+        "Mausam aadharit rog alert par nazar rakhein",
+        "Swayam ugne wale paudhon ko hata dein"
       ]
     },
     "Leaf_Mold": {
       "cause": [
-        "कवक पैसालोरा फुलवा के कारण होता है",
-        "उच्च आर्द्रता और खराब वेंटिलेशन में होता है"
+        "Kavak Passalora fulva ke karan hota hai",
+        "Ucch aardrata aur kharab ventilation mein hota hai"
       ],
       "cure": [
-        "सल्फर या कॉपर कवकनाशी का प्रयोग करें",
-        "प्रभावित पत्तियों को हटा दें"
+        "Sulfur ya Copper kavak-nashi ka prayog karein",
+        "Prabhavit pattiyon ko hata dein"
       ],
       "suggestions": [
-        "ग्रीनहाउस में वेंटिलेशन बढ़ाएं",
-        "आर्द्रता कम करें",
-        "पौधों की भीड़भाड़ से बचें"
+        "Greenhouse mein ventilation badhayein",
+        "Aardrata kam karein",
+        "Paudhon ki bheed-bhaad se bachein"
       ]
     },
     "Early_blight": {
       "cause": [
-        "कवक अल्टरनेरिया सोलानी के कारण होता है",
-        "बारिश के छींटों और संक्रमित मलबे से फैलता है"
+        "Kavak Alternaria solani ke karan hota hai",
+        "Barish ke chheenton aur sankramit malbe se phailta hai"
       ],
       "cure": [
-        "एज़ोक्सीस्ट्रोबिन या मैंकोज़ेब जैसे कवकनाशी का प्रयोग करें",
-        "संक्रमित पत्तियों को हटा दें"
+        "Azoxystrobin ya Mancozeb jaise kavak-nashi ka prayog karein",
+        "Sankramit pattiyon ko hata dein"
       ],
       "suggestions": [
-        "मिट्टी के छींटों को रोकने के लिए मल्च (Mulch) का उपयोग करें",
-        "फसल चक्र अपनाएं",
-        "पौधों का पोषण बनाए रखें"
+        "Mitti ke chheenton ko rokne ke liye mulch ka upyog karein",
+        "Fasal chakra apnayein",
+        "Paudhon ka poshan banaye rakhein"
       ]
     },
     "Spider_mites_Two_spotted_spider_mite": {
       "cause": [
-        "टेट्रानाइकस यूर्टिके माइट्स के कारण होता है",
-        "गर्म और शुष्क परिस्थितियों में पनपता है"
+        "Tetranychus urticae mites ke karan hota hai",
+        "Garam aur shushk paristhitiyon mein panapta hai"
       ],
       "cure": [
-        "एकारिसाइड्स या कीटनाशक साबुन का प्रयोग करें",
-        "नीम के तेल के स्प्रे का उपयोग करें"
+        "Acaricides ya keet-nashak sabun ka prayog karein",
+        "Neem ke tel ke spray ka upyog karein"
       ],
       "suggestions": [
-        "आर्द्रता बढ़ाएं",
-        "लेडी बीटल जैसे प्राकृतिक शिकारियों को लाएं",
-        "नियमित रूप से पत्तियों के निचले हिस्से की जांच करें"
+        "Aardrata badhayein",
+        "Lady beetle jaise prakritik shikariyon ko layein",
+        "Niyamit roop se pattiyon ke nichle hisse ki jaanch karein"
       ]
     },
     "Septoria_leaf_spot": {
       "cause": [
-        "कवक सेप्टोरिया लाइकोपर्सिकी के कारण होता है",
-        "पानी के छींटों और संक्रमित मलबे के माध्यम से फैलता है"
+        "Kavak Septoria lycopersici ke karan hota hai",
+        "Pani ke chheenton aur sankramit malbe ke madhyam se phailta hai"
       ],
       "cure": [
-        "क्लोरोथालोनिल जैसे कवकनाशी का प्रयोग करें",
-        "संक्रमित पत्तियों को हटा दें"
+        "Chlorothalonil jaise kavak-nashi ka prayog karein",
+        "Sankramit pattiyon ko hata dein"
       ],
       "suggestions": [
-        "ऊपर से पानी देने से बचें",
-        "फसल चक्र का पालन करें",
-        "खेत की स्वच्छता बनाए रखें"
+        "Upar se pani dene se bachein",
+        "Fasal chakra ka palan karein",
+        "Khet ki swachhta banaye rakhein"
       ]
     },
     "Tomato_healthy": {
       "cause": [
-        "कोई रोग मौजूद नहीं है"
+        "Koi rog maujood nahi hai"
       ],
       "cure": [
-        "लागू नहीं"
+        "Lagu nahi"
       ],
       "suggestions": [
-        "संतुलित उर्वरक बनाए रखें",
-        "नियमित रूप से कीटों और रोगों की जांच करें",
-        "उचित सिंचाई और जल निकासी सुनिश्चित करें"
+        "Santulit urvarak banaye rakhein",
+        "Niyamit roop se keeton aur rogon ki jaanch karein",
+        "Uchit sinchai aur jal nikasi sunishchit karein"
       ]
     }
   },
   "potato": {
     "Late_blight": {
       "cause": [
-        "फाइटोफ्थोरा इन्फेस्टन्स के कारण होता है",
-        "ठंडी और गीली मौसम बीमारी को बढ़ावा देती है"
+        "Phytophthora infestans ke karan hota hai",
+        "Thandi aur geeli mausam bimari ko badhava deti hai"
       ],
       "cure": [
-        "मेटालेक्सिल जैसे प्रणालीगत कवकनाशी का प्रयोग करें",
-        "संक्रमित पौधों को हटा दें"
+        "Metalaxyl jaise pranali-gat systemic kavak-nashi ka prayog karein",
+        "Sankramit paudhon ko hata dein"
       ],
       "suggestions": [
-        "प्रमाणित बीज आलू का उपयोग करें",
-        "संक्रमित मलबे को नष्ट करें",
-        "फसल चक्र का पालन करें"
+        "Pramanit beej aaloo ka upyog karein",
+        "Sankramit malbe ko nasht karein",
+        "Fasal chakra ka palan karein"
       ]
     },
     "Early_blight": {
       "cause": [
-        "अल्टरनेरिया सोलानी के कारण होता है"
+        "Alternaria solani ke karan hota hai"
       ],
       "cure": [
-        "सुरक्षात्मक कवकनाशी का प्रयोग करें"
+        "Suraksha-atmak kavak-nashi ka prayog karein"
       ],
       "suggestions": [
-        "पौधों का उचित पोषण बनाए रखें",
-        "पानी की कमी से बचें"
+        "Paudhon ka uchit poshan banaye rakhein",
+        "Pani ki kami se bachein"
       ]
     }
   },
   "corn": {
     "Common_rust": {
       "cause": [
-        "पक्सिनिया सोरघी कवक के कारण होता है"
+        "Puccinia sorghi kavak ke karan hota hai"
       ],
       "cure": [
-        "गंभीर होने पर कवकनाशी का प्रयोग करें"
+        "Gambhir hone par kavak-nashi ka prayog karein"
       ],
       "suggestions": [
-        "प्रतिरोधी संकर किस्में उगाएं",
-        "शुरुआती रोग के लक्षणों की निगरानी करें"
+        "Pratirodhi sankar kismein ugayein",
+        "Shuruati rog ke lakshano ki nigrani karein"
       ]
     },
     "Northern_Leaf_Blight": {
       "cause": [
-        "एक्सेरोहिलम टर्सिकम के कारण होता है"
+        "Exserohilum turcicum ke karan hota hai"
       ],
       "cure": [
-        "कवकनाशी का अनुप्रयोग"
+        "Kavak-nashi ka anuprayog"
       ],
       "suggestions": [
-        "फसल चक्र अपनाएं",
-        "प्रतिरोधी किस्मों का उपयोग करें"
+        "Fasal chakra apnayein",
+        "Pratirodhi kismon ka upyog karein"
       ]
     }
   },
   "rice": {
     "Blast": {
       "cause": [
-        "मैग्नापोर्टे ओरिजा कवक के कारण होता है"
+        "Magnaporthe oryzae kavak ke karan hota hai"
       ],
       "cure": [
-        "ट्राइसाइक्लाज़ोल कवकनाशी का प्रयोग करें"
+        "Tricyclazole kavak-nashi ka prayog karein"
       ],
       "suggestions": [
-        "प्रतिरोधी किस्मों का उपयोग करें",
-        "अत्यधिक नाइट्रोजन उर्वरक से बचें"
+        "Pratirodhi kismon ka upyog karein",
+        "Atyadhik nitrogen urvarak se bachein"
       ]
     },
     "Bacterial_Leaf_Blight": {
       "cause": [
-        "ज़ैंथोमोनास ओरिजा के कारण होता है"
+        "Xanthomonas oryzae ke karan hota hai"
       ],
       "cure": [
-        "कोई प्रभावी रासायनिक इलाज नहीं है",
-        "संक्रमित पौधों को हटा दें"
+        "Koi prabhavi rasayanik ilaaj nahi hai",
+        "Sankramit paudhon ko hata dein"
       ],
       "suggestions": [
-        "प्रतिरोधी किस्मों का उपयोग करें",
-        "खेत में उचित जल निकासी बनाए रखें"
+        "Pratirodhi kismon ka upyog karein",
+        "Khet mein uchit jal nikasi banaye rakhein"
       ]
     }
   }
