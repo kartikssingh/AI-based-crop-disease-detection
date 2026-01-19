@@ -1,9 +1,16 @@
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Capture from './pages/Capture'
+import Result from './pages/Result'
+
 function App() {
   return (
-    <div className="min-h-screen bg-red-500 flex items-center justify-center">
-      <h1 className="text-3xl font-bold text-white">
-        TAILWIND v3 WORKS ✅
-      </h1>
+    <div className="min-h-screen bg-green-50">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/capture" element={<Capture />} />
+        <Route path="/result" element={<Result />} />
+      </Routes>
     </div>
   )
 }
