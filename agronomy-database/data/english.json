@@ -1,0 +1,259 @@
+{
+  "tomato": {
+    "Tomato_mosaic_virus": {
+      "cause": [
+        "Caused by Tomato mosaic virus (ToMV)",
+        "Spread through infected seeds, tools, hands, and plant contact",
+        "Highly stable virus surviving on surfaces for long periods"
+      ],
+      "cure": [
+        "No direct chemical cure available for viral infections",
+        "Remove and destroy infected plants immediately",
+        "Disinfect tools with 10% bleach solution"
+      ],
+      "suggestions": [
+        "Use certified virus-free seeds",
+        "Avoid handling plants when wet",
+        "Practice strict field sanitation",
+        "Grow resistant tomato varieties",
+        "Rotate crops and avoid tobacco handling before farming"
+      ]
+    },
+
+    "Target_Spot": {
+      "cause": [
+        "Caused by fungus Corynespora cassiicola",
+        "Favored by high humidity and warm temperatures",
+        "Spreads through wind and rain splash"
+      ],
+      "cure": [
+        "Apply fungicides like chlorothalonil or mancozeb",
+        "Remove infected leaves to reduce spread"
+      ],
+      "suggestions": [
+        "Ensure good air circulation",
+        "Avoid overhead irrigation",
+        "Use disease-free seeds",
+        "Practice crop rotation"
+      ]
+    },
+
+    "Bacterial_spot": {
+      "cause": [
+        "Caused by Xanthomonas species",
+        "Spread via rain splash, contaminated tools, and seeds"
+      ],
+      "cure": [
+        "Copper-based bactericides (limited effectiveness)",
+        "Remove infected plants"
+      ],
+      "suggestions": [
+        "Use resistant varieties",
+        "Avoid working in wet fields",
+        "Disinfect tools",
+        "Follow proper spacing between plants"
+      ]
+    },
+
+    "Tomato_Yellow_Leaf_Curl_Virus": {
+      "cause": [
+        "Caused by Tomato Yellow Leaf Curl Virus (TYLCV)",
+        "Transmitted by whiteflies"
+      ],
+      "cure": [
+        "No cure once infected",
+        "Remove infected plants",
+        "Control whitefly population"
+      ],
+      "suggestions": [
+        "Use insect-proof nets",
+        "Apply neem oil or imidacloprid for whitefly control",
+        "Plant resistant hybrids",
+        "Avoid overlapping cropping cycles"
+      ]
+    },
+
+    "Late_blight": {
+      "cause": [
+        "Caused by Phytophthora infestans",
+        "Thrives in cool, wet conditions"
+      ],
+      "cure": [
+        "Apply fungicides such as metalaxyl or mancozeb",
+        "Destroy infected plants"
+      ],
+      "suggestions": [
+        "Avoid water stagnation",
+        "Use resistant varieties",
+        "Monitor weather-based disease alerts",
+        "Remove volunteer plants"
+      ]
+    },
+
+    "Leaf_Mold": {
+      "cause": [
+        "Caused by fungus Passalora fulva",
+        "Occurs in high humidity and poor ventilation"
+      ],
+      "cure": [
+        "Apply sulfur or copper fungicides",
+        "Remove affected foliage"
+      ],
+      "suggestions": [
+        "Increase ventilation in greenhouses",
+        "Reduce humidity",
+        "Avoid overcrowding plants"
+      ]
+    },
+
+    "Early_blight": {
+      "cause": [
+        "Caused by fungus Alternaria solani",
+        "Spread by rain splash and infected debris"
+      ],
+      "cure": [
+        "Apply fungicides like azoxystrobin or mancozeb",
+        "Remove infected leaves"
+      ],
+      "suggestions": [
+        "Use mulch to prevent soil splash",
+        "Rotate crops",
+        "Maintain plant nutrition"
+      ]
+    },
+
+    "Spider_mites_Two_spotted_spider_mite": {
+      "cause": [
+        "Caused by Tetranychus urticae mites",
+        "Thrives in hot and dry conditions"
+      ],
+      "cure": [
+        "Apply acaricides or insecticidal soap",
+        "Use neem oil sprays"
+      ],
+      "suggestions": [
+        "Increase humidity",
+        "Introduce natural predators like lady beetles",
+        "Regularly monitor leaf undersides"
+      ]
+    },
+
+    "Septoria_leaf_spot": {
+      "cause": [
+        "Caused by fungus Septoria lycopersici",
+        "Spreads through water splash and infected debris"
+      ],
+      "cure": [
+        "Apply fungicides such as chlorothalonil",
+        "Remove infected leaves"
+      ],
+      "suggestions": [
+        "Avoid overhead watering",
+        "Practice crop rotation",
+        "Maintain field hygiene"
+      ]
+    },
+
+    "Tomato_healthy": {
+      "cause": [
+        "No disease present"
+      ],
+      "cure": [
+        "Not applicable"
+      ],
+      "suggestions": [
+        "Maintain balanced fertilization",
+        "Monitor regularly for pests and diseases",
+        "Ensure proper irrigation and drainage"
+      ]
+    }
+  },
+
+  "potato": {
+    "Late_blight": {
+      "cause": [
+        "Caused by Phytophthora infestans",
+        "Cool and wet weather favors disease"
+      ],
+      "cure": [
+        "Apply systemic fungicides like metalaxyl",
+        "Remove infected plants"
+      ],
+      "suggestions": [
+        "Use certified seed potatoes",
+        "Destroy infected debris",
+        "Practice crop rotation"
+      ]
+    },
+
+    "Early_blight": {
+      "cause": [
+        "Caused by Alternaria solani"
+      ],
+      "cure": [
+        "Apply protective fungicides"
+      ],
+      "suggestions": [
+        "Maintain proper plant nutrition",
+        "Avoid water stress"
+      ]
+    }
+  },
+
+  "corn": {
+    "Common_rust": {
+      "cause": [
+        "Caused by Puccinia sorghi fungus"
+      ],
+      "cure": [
+        "Apply fungicides if severe"
+      ],
+      "suggestions": [
+        "Grow resistant hybrids",
+        "Monitor early disease symptoms"
+      ]
+    },
+
+    "Northern_Leaf_Blight": {
+      "cause": [
+        "Caused by Exserohilum turcicum"
+      ],
+      "cure": [
+        "Fungicide application"
+      ],
+      "suggestions": [
+        "Crop rotation",
+        "Use resistant varieties"
+      ]
+    }
+  },
+
+  "rice": {
+    "Blast": {
+      "cause": [
+        "Caused by Magnaporthe oryzae fungus"
+      ],
+      "cure": [
+        "Apply tricyclazole fungicide"
+      ],
+      "suggestions": [
+        "Use resistant varieties",
+        "Avoid excessive nitrogen fertilization"
+      ]
+    },
+
+    "Bacterial_Leaf_Blight": {
+      "cause": [
+        "Caused by Xanthomonas oryzae"
+      ],
+      "cure": [
+        "No effective chemical cure",
+        "Remove infected plants"
+      ],
+      "suggestions": [
+        "Use resistant varieties",
+        "Maintain proper field drainage"
+      ]
+    }
+  }
+}
