@@ -1,0 +1,244 @@
+{
+  "tomato": {
+    "Tomato_mosaic_virus": {
+      "cause": [
+        "Tamatar mosaic virus (ToMV) ke karan hota hai",
+        "Sankramit beejon, auzaron, hathon aur paudhon ke sampark se phailta hai",
+        "Atyadhik sthir virus jo satahon par lambe samay tak jeevit rehta hai"
+      ],
+      "cure": [
+        "Viral sankraman ke liye koi seedha rasayanik ilaaj uplabdh nahi hai",
+        "Sankramit paudhon ko turant hata dein aur nasht kar dein",
+        "Auzaron ko 10% bleach ke ghol se kitanurahit karein"
+      ],
+      "suggestions": [
+        "Pramanit virus-mukt beejon ka upyog karein",
+        "Geele hone par paudhon ko chhune se bachein",
+        "Khet ki swachhta ka sakhti se palan karein",
+        "Pratirodhi tamatar ki kismein ugayein",
+        "Fasal chakra apnayein aur kheti se pehle tambaku ko chhune se bachein"
+      ]
+    },
+    "Target_Spot": {
+      "cause": [
+        "Kavak Corynespora cassiicola ke karan hota hai",
+        "Ucch aardrata aur garam taapman mein panapta hai",
+        "Hawa aur barish ke chheenton se phailta hai"
+      ],
+      "cure": [
+        "Chlorothalonil ya Mancozeb jaise kavak-nashi (fungicide) ka chhidkav karein",
+        "Sankraman ko kam karne ke liye sankramit pattiyon ko hata dein"
+      ],
+      "suggestions": [
+        "Hawa ka accha sanchar sunishchit karein",
+        "Upar se sinchai (overhead irrigation) se bachein",
+        "Rog-mukt beejon ka upyog karein",
+        "Fasal chakra ka palan karein"
+      ]
+    },
+    "Bacterial_spot": {
+      "cause": [
+        "Xanthomonas prajati ke karan hota hai",
+        "Barish ke chheenton, dooshit auzaron aur beejon ke madhyam se phailta hai"
+      ],
+      "cure": [
+        "Copper-aadharit jivanu-nashak (seemit prabhavsheelta)",
+        "Sankramit paudhon ko hata dein"
+      ],
+      "suggestions": [
+        "Pratirodhi kismon ka upyog karein",
+        "Geele kheton mein kaam karne se bachein",
+        "Auzaron ko kitanurahit karein",
+        "Paudhon ke beech uchit doori banaye rakhein"
+      ]
+    },
+    "Tomato_Yellow_Leaf_Curl_Virus": {
+      "cause": [
+        "Tamatar yellow leaf curl virus (TYLCV) ke karan hota hai",
+        "Safed makkhiyon (whiteflies) dwara phailta hai"
+      ],
+      "cure": [
+        "Sankraman hone ke baad koi ilaaj nahi hai",
+        "Sankramit paudhon ko hata dein",
+        "Safed makkhi ki abadi ko niyantrit karein"
+      ],
+      "suggestions": [
+        "Keet-rodhi jaal ka upyog karein",
+        "Safed makkhi ke niyantran ke liye neem ka tel ya Imidacloprid ka prayog karein",
+        "Pratirodhi sankar kismein lagayein",
+        "Fasal chakron ko overlap karne se bachein"
+      ]
+    },
+    "Late_blight": {
+      "cause": [
+        "Phytophthora infestans ke karan hota hai",
+        "Thandi aur geeli paristhitiyon mein panapta hai"
+      ],
+      "cure": [
+        "Metalaxyl ya Mancozeb jaise kavak-nashi ka prayog karein",
+        "Sankramit paudhon ko nasht kar dein"
+      ],
+      "suggestions": [
+        "Pani ke jamav se bachein",
+        "Pratirodhi kismon ka upyog karein",
+        "Mausam aadharit rog alert par nazar rakhein",
+        "Swayam ugne wale paudhon ko hata dein"
+      ]
+    },
+    "Leaf_Mold": {
+      "cause": [
+        "Kavak Passalora fulva ke karan hota hai",
+        "Ucch aardrata aur kharab ventilation mein hota hai"
+      ],
+      "cure": [
+        "Sulfur ya Copper kavak-nashi ka prayog karein",
+        "Prabhavit pattiyon ko hata dein"
+      ],
+      "suggestions": [
+        "Greenhouse mein ventilation badhayein",
+        "Aardrata kam karein",
+        "Paudhon ki bheed-bhaad se bachein"
+      ]
+    },
+    "Early_blight": {
+      "cause": [
+        "Kavak Alternaria solani ke karan hota hai",
+        "Barish ke chheenton aur sankramit malbe se phailta hai"
+      ],
+      "cure": [
+        "Azoxystrobin ya Mancozeb jaise kavak-nashi ka prayog karein",
+        "Sankramit pattiyon ko hata dein"
+      ],
+      "suggestions": [
+        "Mitti ke chheenton ko rokne ke liye mulch ka upyog karein",
+        "Fasal chakra apnayein",
+        "Paudhon ka poshan banaye rakhein"
+      ]
+    },
+    "Spider_mites_Two_spotted_spider_mite": {
+      "cause": [
+        "Tetranychus urticae mites ke karan hota hai",
+        "Garam aur shushk paristhitiyon mein panapta hai"
+      ],
+      "cure": [
+        "Acaricides ya keet-nashak sabun ka prayog karein",
+        "Neem ke tel ke spray ka upyog karein"
+      ],
+      "suggestions": [
+        "Aardrata badhayein",
+        "Lady beetle jaise prakritik shikariyon ko layein",
+        "Niyamit roop se pattiyon ke nichle hisse ki jaanch karein"
+      ]
+    },
+    "Septoria_leaf_spot": {
+      "cause": [
+        "Kavak Septoria lycopersici ke karan hota hai",
+        "Pani ke chheenton aur sankramit malbe ke madhyam se phailta hai"
+      ],
+      "cure": [
+        "Chlorothalonil jaise kavak-nashi ka prayog karein",
+        "Sankramit pattiyon ko hata dein"
+      ],
+      "suggestions": [
+        "Upar se pani dene se bachein",
+        "Fasal chakra ka palan karein",
+        "Khet ki swachhta banaye rakhein"
+      ]
+    },
+    "Tomato_healthy": {
+      "cause": [
+        "Koi rog maujood nahi hai"
+      ],
+      "cure": [
+        "Lagu nahi"
+      ],
+      "suggestions": [
+        "Santulit urvarak banaye rakhein",
+        "Niyamit roop se keeton aur rogon ki jaanch karein",
+        "Uchit sinchai aur jal nikasi sunishchit karein"
+      ]
+    }
+  },
+  "potato": {
+    "Late_blight": {
+      "cause": [
+        "Phytophthora infestans ke karan hota hai",
+        "Thandi aur geeli mausam bimari ko badhava deti hai"
+      ],
+      "cure": [
+        "Metalaxyl jaise pranali-gat systemic kavak-nashi ka prayog karein",
+        "Sankramit paudhon ko hata dein"
+      ],
+      "suggestions": [
+        "Pramanit beej aaloo ka upyog karein",
+        "Sankramit malbe ko nasht karein",
+        "Fasal chakra ka palan karein"
+      ]
+    },
+    "Early_blight": {
+      "cause": [
+        "Alternaria solani ke karan hota hai"
+      ],
+      "cure": [
+        "Suraksha-atmak kavak-nashi ka prayog karein"
+      ],
+      "suggestions": [
+        "Paudhon ka uchit poshan banaye rakhein",
+        "Pani ki kami se bachein"
+      ]
+    }
+  },
+  "corn": {
+    "Common_rust": {
+      "cause": [
+        "Puccinia sorghi kavak ke karan hota hai"
+      ],
+      "cure": [
+        "Gambhir hone par kavak-nashi ka prayog karein"
+      ],
+      "suggestions": [
+        "Pratirodhi sankar kismein ugayein",
+        "Shuruati rog ke lakshano ki nigrani karein"
+      ]
+    },
+    "Northern_Leaf_Blight": {
+      "cause": [
+        "Exserohilum turcicum ke karan hota hai"
+      ],
+      "cure": [
+        "Kavak-nashi ka anuprayog"
+      ],
+      "suggestions": [
+        "Fasal chakra apnayein",
+        "Pratirodhi kismon ka upyog karein"
+      ]
+    }
+  },
+  "rice": {
+    "Blast": {
+      "cause": [
+        "Magnaporthe oryzae kavak ke karan hota hai"
+      ],
+      "cure": [
+        "Tricyclazole kavak-nashi ka prayog karein"
+      ],
+      "suggestions": [
+        "Pratirodhi kismon ka upyog karein",
+        "Atyadhik nitrogen urvarak se bachein"
+      ]
+    },
+    "Bacterial_Leaf_Blight": {
+      "cause": [
+        "Xanthomonas oryzae ke karan hota hai"
+      ],
+      "cure": [
+        "Koi prabhavi rasayanik ilaaj nahi hai",
+        "Sankramit paudhon ko hata dein"
+      ],
+      "suggestions": [
+        "Pratirodhi kismon ka upyog karein",
+        "Khet mein uchit jal nikasi banaye rakhein"
+      ]
+    }
+  }
+}

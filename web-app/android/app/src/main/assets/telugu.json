@@ -1,0 +1,244 @@
+{
+  "tomato": {
+    "Tomato_mosaic_virus": {
+      "cause": [
+        "Tomato mosaic virus (ToMV) valla kaluguthundi",
+        "Vyadhi sokina vitthanaalu, parikaraalu, chethulu mariyu mokkala sparsha dwara vyapisthundi",
+        "Ee virus uparithalalapai ekkuva kaalam jeevinchi untundi"
+      ],
+      "cure": [
+        "Viral infection-laku neruga rasaayana nivarana andubaatulo ledu",
+        "Vyadhi sokina mokkalanu ventane tholaginchi naashanam cheyandi",
+        "Panimutlanu 10% bleach draavanamtho shubhram cheyandi"
+      ],
+      "suggestions": [
+        "Dhruveekarinchabadina virus rahitha vitthanaalanu vaadandi",
+        "Thadiga unnapudu mokkalanu thaakadam maanukondi",
+        "Polamlo parishubhrathanu khacchithamga paatinchandi",
+        "Vyadhi nirodhaka tomato rakaalanu saagu cheyandi",
+        "Panta maarpidi cheyandi mariyu vyavasaayaaniki mundu pogaakunu thaakavaddhu"
+      ]
+    },
+    "Target_Spot": {
+      "cause": [
+        "Corynespora cassiicola ane shileendhram valla kaluguthundi",
+        "Adhika thema mariyu vecchani ushnograthala valla vruddhi chenduthundi",
+        "Gaali mariyu varshapu chinukula dwara vyapisthundi"
+      ],
+      "cure": [
+        "Chlorothalonil leda Mancozeb vanti shileendhra naashakaalanu pichikaari cheyandi",
+        "Vyadhi vyaapthini thagginchadaniki sokina aakulanu tholaginchandi"
+      ],
+      "suggestions": [
+        "Mokkala madhya gaali baaga thagilela choosukondi",
+        "Sprinkler dwara neeti paarudala maanukondi",
+        "Vyadhi leni vitthanaalanu vaadandi",
+        "Panta maarpidi paddhathini paatinchandi"
+      ]
+    },
+    "Bacterial_spot": {
+      "cause": [
+        "Xanthomonas jaathula valla kaluguthundi",
+        "Varshapu chinukulu, kalushithamaina parikaraalu mariyu vitthanaala dwara vyapisthundi"
+      ],
+      "cure": [
+        "Copper aadharitha bactericides vaadandi (parimitha prabhaavam)",
+        "Vyadhi sokina mokkalanu tholaginchandi"
+      ],
+      "suggestions": [
+        "Vyadhi nirodhaka rakaalanu vaadandi",
+        "Polam thadiga unnapudu pani cheyadam maanukondi",
+        "Panimutlanu krimirahitham cheyandi",
+        "Mokkala madhya saraina dooram paatinchandi"
+      ]
+    },
+    "Tomato_Yellow_Leaf_Curl_Virus": {
+      "cause": [
+        "Tomato Yellow Leaf Curl Virus (TYLCV) valla kaluguthundi",
+        "Thella domala dwara vyapisthundi"
+      ],
+      "cure": [
+        "Vyadhi sokina tharuvatha nivarana ledu",
+        "Vyadhi sokina mokkalanu tholaginchandi",
+        "Thella domala janaabhaanu niyanthrinchandi"
+      ],
+      "suggestions": [
+        "Keetaka nirodhaka valalanu vaadandi",
+        "Thella domala niyanthranaku vepa noone leda Imidacloprid vaadandi",
+        "Nirodhaka hybrid rakaalanu naatandi",
+        "Pantala chakraalu okadaanitho okati kalavakunda choosukondi"
+      ]
+    },
+    "Late_blight": {
+      "cause": [
+        "Phytophthora infestans valla kaluguthundi",
+        "Challani mariyu thadi paristhithulalo vruddhi chenduthundi"
+      ],
+      "cure": [
+        "Metalaxyl leda Mancozeb vanti shileendhra naashakaalanu vaadandi",
+        "Vyadhi sokina mokkalanu naashanam cheyandi"
+      ],
+      "suggestions": [
+        "Neeru nilva undakunda choosukondi",
+        "Nirodhaka rakaalanu vaadandi",
+        "Vaathaavarana aadharitha vyadhi heccharikalanu gamaninchandi",
+        "Kalupu mokkalanu tholaginchandi"
+      ]
+    },
+    "Leaf_Mold": {
+      "cause": [
+        "Passalora fulva ane shileendhram valla kaluguthundi",
+        "Adhika thema mariyu gaali sariga thagalini chota vasthundi"
+      ],
+      "cure": [
+        "Sulfur leda Copper shileendhra naashakaalanu vaadandi",
+        "Vyadhi sokina aakulanu tholaginchandi"
+      ],
+      "suggestions": [
+        "Greenhouse-lalo gaali prasarananu penchandi",
+        "Themanu thagginchandi",
+        "Mokkalu maree daggaraga lekunda choosukondi"
+      ]
+    },
+    "Early_blight": {
+      "cause": [
+        "Alternaria solani ane shileendhram valla kaluguthundi",
+        "Varshapu chinukulu mariyu sokina vyarthaala dwara vyapisthundi"
+      ],
+      "cure": [
+        "Azoxystrobin leda Mancozeb vanti shileendhra naashakaalanu vaadandi",
+        "Vyadhi sokina aakulanu tholaginchandi"
+      ],
+      "suggestions": [
+        "Matti chimmakunda undataaniki mulching vaadandi",
+        "Panta maarpidi cheyandi",
+        "Mokkala poshananu sarigga nirvahinchandi"
+      ]
+    },
+    "Spider_mites_Two_spotted_spider_mite": {
+      "cause": [
+        "Tetranychus urticae mites valla kaluguthundi",
+        "Vedi mariyu podi paristhithulalo vruddhi chenduthundi"
+      ],
+      "cure": [
+        "Acaricides leda keetakanaashaka sabbunu vaadandi",
+        "Vepa noone spray-lanu vaadandi"
+      ],
+      "suggestions": [
+        "Themanu penchandi",
+        "Lady beetles vanti sahaja shathruvulanu praveshapettandi",
+        "Aakula adugu bhaagaanni tharachuga gamaninchandi"
+      ]
+    },
+    "Septoria_leaf_spot": {
+      "cause": [
+        "Septoria lycopersici ane shileendhram valla kaluguthundi",
+        "Neeti thumparalu mariyu sokina vyarthaala dwara vyapisthundi"
+      ],
+      "cure": [
+        "Chlorothalonil vanti shileendhra naashakaalanu vaadandi",
+        "Vyadhi sokina aakulanu tholaginchandi"
+      ],
+      "suggestions": [
+        "Mokkala pai nundi neeru poyadam maanukondi",
+        "Panta maarpidi paddhathini paatinchandi",
+        "Polamlo parishubhratha paatinchandi"
+      ]
+    },
+    "Tomato_healthy": {
+      "cause": [
+        "Etuventi vyadhi ledu"
+      ],
+      "cure": [
+        "Varthinchadu"
+      ],
+      "suggestions": [
+        "Samathulya eruvulanu vaadandi",
+        "Keetakaalu mariyu vyadhula kosam tharachuga gamaninchandi",
+        "Saraina neeti paarudala mariyu drainage-ni choosukondi"
+      ]
+    }
+  },
+  "potato": {
+    "Late_blight": {
+      "cause": [
+        "Phytophthora infestans valla kaluguthundi",
+        "Challani mariyu thadi vaathaavaranam vyadhiki anukoolam"
+      ],
+      "cure": [
+        "Metalaxyl vanti systemic shileendhra naashakaalanu vaadandi",
+        "Vyadhi sokina mokkalanu tholaginchandi"
+      ],
+      "suggestions": [
+        "Dhruveekarinchabadina vitthana bangaaladumpalanu vaadandi",
+        "Sokina vyarthaalanu naashanam cheyandi",
+        "Panta maarpidi paddhathini paatinchandi"
+      ]
+    },
+    "Early_blight": {
+      "cause": [
+        "Alternaria solani valla kaluguthundi"
+      ],
+      "cure": [
+        "Rakshitha shileendhra naashakaalanu vaadandi"
+      ],
+      "suggestions": [
+        "Mokkalaku saraina poshakaalanu andinchandi",
+        "Neeti eddadi lekunda choosukondi"
+      ]
+    }
+  },
+  "corn": {
+    "Common_rust": {
+      "cause": [
+        "Puccinia sorghi shileendhram valla kaluguthundi"
+      ],
+      "cure": [
+        "Theevramga unte shileendhra naashakaalanu vaadandi"
+      ],
+      "suggestions": [
+        "Nirodhaka hybrid rakaalanu penchandi",
+        "Vyadhi lakshanaalanu mundugaane gamaninchandi"
+      ]
+    },
+    "Northern_Leaf_Blight": {
+      "cause": [
+        "Exserohilum turcicum valla kaluguthundi"
+      ],
+      "cure": [
+        "Shileendhra naashakaalanu pichikaari cheyandi"
+      ],
+      "suggestions": [
+        "Panta maarpidi cheyandi",
+        "Nirodhaka rakaalanu vaadandi"
+      ]
+    }
+  },
+  "rice": {
+    "Blast": {
+      "cause": [
+        "Magnaporthe oryzae shileendhram valla kaluguthundi"
+      ],
+      "cure": [
+        "Tricyclazole shileendhra naashakaanni vaadandi"
+      ],
+      "suggestions": [
+        "Nirodhaka rakaalanu vaadandi",
+        "Adhika nathrajani eruvulanu nivaarinchandi"
+      ]
+    },
+    "Bacterial_Leaf_Blight": {
+      "cause": [
+        "Xanthomonas oryzae valla kaluguthundi"
+      ],
+      "cure": [
+        "Samarthavanthamaina rasaayana nivarana ledu",
+        "Vyadhi sokina mokkalanu tholaginchandi"
+      ],
+      "suggestions": [
+        "Nirodhaka rakaalanu vaadandi",
+        "Polamlo neeru sarigga poyela choosukondi"
+      ]
+    }
+  }
+}
