@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import { Globe } from 'lucide-react'
+// ADD THIS IMPORT
+import cropService from '../services/cropService'
 
 const crops = [
   { 
@@ -85,7 +87,11 @@ export default function Home() {
             {crops.map((crop) => (
               <button
                 key={crop.name}
-                onClick={() => navigate('/capture')}
+                // CHANGE THIS LINE - ADD CROP SERVICE
+                onClick={() => {
+                  cropService.setCurrentCrop(crop.name.toLowerCase());
+                  navigate('/capture');
+                }}
                 className={`
                   h-32 rounded-xl ${crop.color}
                   border ${crop.borderColor}

@@ -2,24 +2,36 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import { Camera, Upload, Zap, Image, X } from 'lucide-react'
+import nativeBridge from '../services/nativeBridge'
 
 export default function Capture() {
   const navigate = useNavigate()
   const [imagePreview, setImagePreview] = useState(null)
-  const [sourceType, setSourceType] = useState('camera') // 'camera' or 'gallery'
+  const [sourceType, setSourceType] = useState('camera')
+  const [isAnalyzing, setIsAnalyzing] = useState(false)
 
   const handleCapture = () => {
-    // For demo - simulate image capture
-    setImagePreview('demo-image')
     setSourceType('camera')
-    // In real app: Launch camera via bridge
+    
+    nativeBridge.openCamera((base64Image, error) => {
+      if (error) {
+        alert('Camera error: ' + error)
+        return
+      }
+      setImagePreview(base64Image)
+    })
   }
 
   const handleGalleryPick = () => {
-    // For demo - simulate gallery pick
-    setImagePreview('gallery-image')
     setSourceType('gallery')
-    // In real app: Launch gallery picker via bridge
+    
+    nativeBridge.openGallery((base64Image, error) => {
+      if (error) {
+        alert('Gallery error: ' + error)
+        return
+      }
+      setImagePreview(base64Image)
+    })
   }
 
   const handleRemoveImage = () => {
@@ -27,10 +39,26 @@ export default function Capture() {
   }
 
   const handleAnalyze = () => {
-    if (imagePreview) {
-      navigate('/result')
-    } else {
+    if (!imagePreview) {
       alert('Please capture or select an image first')
+      return
+    }
+
+    setIsAnalyzing(true)
+    
+    if (imagePreview.startsWith('data:image')) {
+      nativeBridge.classifyImage(imagePreview)
+        .then(result => {
+          setIsAnalyzing(false)
+          navigate('/result', { state: { result, image: imagePreview } })
+        })
+        .catch(error => {
+          setIsAnalyzing(false)
+          alert('Analysis failed: ' + error.message)
+        })
+    } else {
+      setIsAnalyzing(false)
+      navigate('/result')
     }
   }
 
@@ -81,9 +109,17 @@ export default function Capture() {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative">
                   {/* Preview Image */}
-                  <div className="w-56 h-56 rounded-lg bg-gradient-to-br from-emerald-400/20 to-teal-300/20 border-2 border-white/20 flex items-center justify-center">
-                    <div className="text-5xl">🍃</div>
-                  </div>
+                  {imagePreview.startsWith('data:image') ? (
+                    <img 
+                      src={imagePreview} 
+                      alt="Preview" 
+                      className="w-56 h-56 rounded-lg object-cover border-2 border-white/20"
+                    />
+                  ) : (
+                    <div className="w-56 h-56 rounded-lg bg-gradient-to-br from-emerald-400/20 to-teal-300/20 border-2 border-white/20 flex items-center justify-center">
+                      <div className="text-5xl">🍃</div>
+                    </div>
+                  )}
                   
                   {/* Remove Button */}
                   <button
@@ -146,10 +182,20 @@ export default function Capture() {
           ) : (
             <button
               onClick={handleAnalyze}
-              className="w-full h-12 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-semibold flex items-center justify-center shadow-md"
+              disabled={isAnalyzing}
+              className="w-full h-12 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-semibold flex items-center justify-center shadow-md disabled:opacity-70"
             >
-              <Zap className="w-5 h-5 mr-2" />
-              Analyze Disease
+              {isAnalyzing ? (
+                <>
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                  Analyzing...
+                </>
+              ) : (
+                <>
+                  <Zap className="w-5 h-5 mr-2" />
+                  Analyze Disease
+                </>
+              )}
             </button>
           )}
         </div>

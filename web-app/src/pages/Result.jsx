@@ -1,9 +1,63 @@
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import { Volume2, Shield, AlertTriangle, RotateCcw, CheckCircle } from 'lucide-react'
+import nativeBridge from '../services/nativeBridge'
+import { useState, useEffect } from 'react'
 
 export default function Result() {
+  const location = useLocation()
   const navigate = useNavigate()
+  const { result, image } = location.state || {}
+  const [isSpeaking, setIsSpeaking] = useState(false)
+
+  // Default mock data if no result from capture
+  const defaultResult = {
+    disease: 'Early Blight',
+    confidence: 92,
+    crop: 'Tomato',
+    advice_cause: 'Caused by fungus Alternaria solani. Spreads through rain splash and infected debris.',
+    advice_cure: 'Apply fungicides like azoxystrobin or mancozeb. Remove infected leaves immediately.',
+    advice_suggestions: 'Use mulch to prevent soil splash. Rotate crops regularly. Maintain proper spacing between plants.'
+  }
+
+  const displayResult = result || defaultResult
+
+  const handleSpeak = () => {
+    if (isSpeaking) {
+      nativeBridge.stopSpeaking()
+      setIsSpeaking(false)
+    } else {
+      setIsSpeaking(true)
+      const speechText = `
+        Disease detected: ${displayResult.disease}. 
+        Confidence level: ${displayResult.confidence} percent.
+        
+        Causes: ${displayResult.advice_cause}
+        
+        Treatment: ${displayResult.advice_cure}
+        
+        Suggestions: ${displayResult.advice_suggestions}
+      `
+      nativeBridge.speak(speechText)
+      
+      // Reset speaking state after 10 seconds (estimated speech time)
+      setTimeout(() => {
+        setIsSpeaking(false)
+      }, 10000)
+    }
+  }
+
+  const handleRestart = () => {
+    nativeBridge.stopSpeaking()
+    navigate('/')
+  }
+
+  useEffect(() => {
+    // Cleanup speech when component unmounts
+    return () => {
+      nativeBridge.stopSpeaking()
+    }
+  }, [])
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -23,6 +77,17 @@ export default function Result() {
           <p className="text-sm text-gray-500">Results ready in 2.3 seconds</p>
         </div>
 
+        {/* Image Preview if available */}
+        {image && (
+          <div className="bg-white rounded-xl p-2 border border-gray-100 shadow-sm">
+            <img 
+              src={image} 
+              alt="Analyzed Leaf" 
+              className="w-full h-40 object-cover rounded-lg"
+            />
+          </div>
+        )}
+
         {/* Disease Card - Beautiful Design */}
         <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm relative overflow-hidden">
           {/* Accent Line */}
@@ -35,15 +100,19 @@ export default function Result() {
               </div>
               <div>
                 <span className="text-xs font-semibold text-red-600 uppercase tracking-wide">Detected Disease</span>
-                <h2 className="text-xl font-bold text-gray-800 mt-1">Early Blight</h2>
-                <p className="text-sm text-gray-500">Tomato • Leaf Disease</p>
+                <h2 className="text-xl font-bold text-gray-800 mt-1">
+                  {displayResult.disease?.replace(/_/g, ' ')}
+                </h2>
+                <p className="text-sm text-gray-500">
+                  {displayResult.crop || 'Tomato'} • Leaf Disease
+                </p>
               </div>
             </div>
             
             {/* Confidence Badge */}
             <div className="text-center">
               <div className="w-12 h-12 rounded-full bg-red-50 border-2 border-red-100 flex items-center justify-center">
-                <span className="text-lg font-bold text-red-600">92%</span>
+                <span className="text-lg font-bold text-red-600">{displayResult.confidence}%</span>
               </div>
               <div className="text-xs text-gray-500 mt-1">Confidence</div>
             </div>
@@ -54,7 +123,7 @@ export default function Result() {
             <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
               <div 
                 className="h-full bg-gradient-to-r from-red-400 to-red-500 rounded-full"
-                style={{ width: '92%' }}
+                style={{ width: `${displayResult.confidence}%` }}
               ></div>
             </div>
             <div className="flex justify-between text-xs text-gray-500 mt-1">
@@ -76,34 +145,40 @@ export default function Result() {
             </div>
           </div>
           
-          {/* Treatment Content */}
+          {/* Treatment Content - Dynamic from result */}
           <div className="space-y-3">
-            <div className="flex items-start">
-              <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mr-3 mt-0.5">
-                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+            {displayResult.advice_cure && (
+              <div className="flex items-start">
+                <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mr-3 mt-0.5">
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                </div>
+                <p className="text-sm text-gray-700">
+                  {displayResult.advice_cure}
+                </p>
               </div>
-              <p className="text-sm text-gray-700">
-                Remove infected leaves immediately and dispose them properly
-              </p>
-            </div>
+            )}
             
-            <div className="flex items-start">
-              <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mr-3 mt-0.5">
-                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+            {displayResult.advice_suggestions && (
+              <div className="flex items-start">
+                <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mr-3 mt-0.5">
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                </div>
+                <p className="text-sm text-gray-700">
+                  {displayResult.advice_suggestions}
+                </p>
               </div>
-              <p className="text-sm text-gray-700">
-                Apply organic fungicide every 7 days for effective control
-              </p>
-            </div>
+            )}
             
-            <div className="flex items-start">
-              <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mr-3 mt-0.5">
-                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+            {displayResult.advice_cause && (
+              <div className="flex items-start">
+                <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center mr-3 mt-0.5">
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                </div>
+                <p className="text-sm text-gray-700">
+                  <strong>Causes:</strong> {displayResult.advice_cause}
+                </p>
               </div>
-              <p className="text-sm text-gray-700">
-                Maintain proper spacing between plants for air circulation
-              </p>
-            </div>
+            )}
           </div>
         </div>
 
@@ -111,22 +186,26 @@ export default function Result() {
         <div className="space-y-3 pt-2">
           {/* Voice Button */}
           <button
-            className="
+            onClick={handleSpeak}
+            className={`
               w-full h-14 rounded-xl
-              bg-gradient-to-r from-blue-600 to-indigo-500
+              ${isSpeaking 
+                ? 'bg-gradient-to-r from-indigo-600 to-purple-500' 
+                : 'bg-gradient-to-r from-blue-600 to-indigo-500'
+              }
               text-white text-base font-semibold
               shadow-md hover:shadow-lg
-              transition-shadow duration-150
+              transition-all duration-150
               flex items-center justify-center
-            "
+            `}
           >
             <Volume2 className="w-5 h-5 mr-3" />
-            Listen in Local Language
+            {isSpeaking ? 'Stop Listening' : 'Listen in Local Language'}
           </button>
 
           {/* Restart Button */}
           <button
-            onClick={() => navigate('/')}
+            onClick={handleRestart}
             className="
               w-full h-14 rounded-xl
               border-2 border-emerald-500
