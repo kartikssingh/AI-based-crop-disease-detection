@@ -3,12 +3,20 @@ import Header from '../components/Header'
 import { Volume2, Shield, AlertTriangle, RotateCcw, CheckCircle } from 'lucide-react'
 import nativeBridge from '../services/nativeBridge'
 import { useState, useEffect } from 'react'
+import languageService from '../services/languageService'  // ADD THIS IMPORT
 
 export default function Result() {
   const location = useLocation()
   const navigate = useNavigate()
-  const { result, image } = location.state || {}
+  const { result, image, crop } = location.state || {}  // ADDED crop from state
   const [isSpeaking, setIsSpeaking] = useState(false)
+  const [currentLanguage, setCurrentLanguage] = useState('en')
+
+  // Get language from localStorage or default to 'en'
+  useEffect(() => {
+    const lang = localStorage.getItem('selectedLanguage') || 'en'
+    setCurrentLanguage(lang)
+  }, [])
 
   // Default mock data if no result from capture
   const defaultResult = {
@@ -28,19 +36,22 @@ export default function Result() {
       setIsSpeaking(false)
     } else {
       setIsSpeaking(true)
-      const speechText = `
-        Disease detected: ${displayResult.disease}. 
-        Confidence level: ${displayResult.confidence} percent.
-        
-        Causes: ${displayResult.advice_cause}
-        
-        Treatment: ${displayResult.advice_cure}
-        
-        Suggestions: ${displayResult.advice_suggestions}
-      `
-      nativeBridge.speak(speechText)
       
-      // Reset speaking state after 10 seconds (estimated speech time)
+      // Get localized text based on current language
+      const speechText = languageService.getLocalizedText(
+        displayResult.disease, 
+        displayResult, 
+        currentLanguage
+      )
+      
+      // If languageService returns object, extract text
+      const textToSpeak = typeof speechText === 'object' 
+        ? `${speechText.disease || displayResult.disease}. ${speechText.cure || displayResult.advice_cure}`
+        : speechText || `${displayResult.disease}. ${displayResult.advice_cure}`
+      
+      nativeBridge.speak(textToSpeak, currentLanguage)
+      
+      // Reset speaking state after 10 seconds
       setTimeout(() => {
         setIsSpeaking(false)
       }, 10000)
@@ -85,6 +96,14 @@ export default function Result() {
               alt="Analyzed Leaf" 
               className="w-full h-40 object-cover rounded-lg"
             />
+            {/* Display crop info if available */}
+            {crop && (
+              <div className="mt-2 text-center">
+                <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full">
+                  {crop.charAt(0).toUpperCase() + crop.slice(1)} Leaf
+                </span>
+              </div>
+            )}
           </div>
         )}
 
@@ -104,7 +123,7 @@ export default function Result() {
                   {displayResult.disease?.replace(/_/g, ' ')}
                 </h2>
                 <p className="text-sm text-gray-500">
-                  {displayResult.crop || 'Tomato'} • Leaf Disease
+                  {(crop || displayResult.crop || 'Tomato').charAt(0).toUpperCase() + (crop || displayResult.crop || 'Tomato').slice(1)} • Leaf Disease
                 </p>
               </div>
             </div>
@@ -112,7 +131,9 @@ export default function Result() {
             {/* Confidence Badge */}
             <div className="text-center">
               <div className="w-12 h-12 rounded-full bg-red-50 border-2 border-red-100 flex items-center justify-center">
-                <span className="text-lg font-bold text-red-600">{displayResult.confidence}%</span>
+                <span className="text-lg font-bold text-red-600">
+                  {displayResult.confidence}{displayResult.confidence.toString().includes('%') ? '' : '%'}
+                </span>
               </div>
               <div className="text-xs text-gray-500 mt-1">Confidence</div>
             </div>
@@ -123,7 +144,11 @@ export default function Result() {
             <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
               <div 
                 className="h-full bg-gradient-to-r from-red-400 to-red-500 rounded-full"
-                style={{ width: `${displayResult.confidence}%` }}
+                style={{ 
+                  width: `${typeof displayResult.confidence === 'number' 
+                    ? displayResult.confidence 
+                    : parseInt(displayResult.confidence) || 50}%` 
+                }}
               ></div>
             </div>
             <div className="flex justify-between text-xs text-gray-500 mt-1">

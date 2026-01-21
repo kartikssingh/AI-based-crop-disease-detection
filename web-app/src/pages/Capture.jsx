@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import { Camera, Upload, Zap, Image, X } from 'lucide-react'
 import nativeBridge from '../services/nativeBridge'
+import cropService from '../services/cropService'  // ADD THIS IMPORT
 
 export default function Capture() {
   const navigate = useNavigate()
@@ -46,19 +47,45 @@ export default function Capture() {
 
     setIsAnalyzing(true)
     
+    // IMPORTANT: Get the current crop from cropService
+    const currentCrop = cropService.getCurrentCrop() || 'tomato'
+    
     if (imagePreview.startsWith('data:image')) {
-      nativeBridge.classifyImage(imagePreview)
+      // Extract pure base64 string (remove "data:image/jpeg;base64," part)
+      const base64String = imagePreview.split(',')[1]
+      
+      // Call classifyImage with BOTH image data AND crop type
+      nativeBridge.classifyImage(base64String, currentCrop)
         .then(result => {
           setIsAnalyzing(false)
-          navigate('/result', { state: { result, image: imagePreview } })
+          // Pass both result and crop to Result page
+          navigate('/result', { 
+            state: { 
+              result, 
+              image: imagePreview,
+              crop: currentCrop  // ADD THIS
+            } 
+          })
         })
         .catch(error => {
           setIsAnalyzing(false)
           alert('Analysis failed: ' + error.message)
+          console.error('ML Analysis Error:', error)
         })
     } else {
       setIsAnalyzing(false)
-      navigate('/result')
+      // Fallback to dummy data for testing
+      navigate('/result', { 
+        state: { 
+          result: { 
+            disease: 'Early Blight',
+            confidence: '85%',
+            treatment: 'Apply fungicide spray'
+          },
+          image: imagePreview,
+          crop: currentCrop
+        } 
+      })
     }
   }
 

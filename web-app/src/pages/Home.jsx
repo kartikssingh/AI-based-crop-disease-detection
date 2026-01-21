@@ -8,6 +8,7 @@ import cropService from '../services/cropService'
 const crops = [
   { 
     name: 'Tomato', 
+    id: 'tomato',  // ADD THIS LINE
     emoji: '🍅',
     color: 'bg-gradient-to-br from-rose-50 via-white to-rose-50',
     borderColor: 'border-rose-200',
@@ -16,6 +17,7 @@ const crops = [
   },
   { 
     name: 'Potato', 
+    id: 'potato',  // ADD THIS LINE
     emoji: '🥔',
     color: 'bg-gradient-to-br from-amber-50 via-white to-amber-50',
     borderColor: 'border-amber-200',
@@ -24,6 +26,7 @@ const crops = [
   },
   { 
     name: 'Maize', 
+    id: 'corn',  // CHANGE THIS: 'maize' → 'corn'
     emoji: '🌽',
     color: 'bg-gradient-to-br from-yellow-50 via-white to-yellow-50',
     borderColor: 'border-yellow-200',
@@ -32,6 +35,7 @@ const crops = [
   },
   { 
     name: 'Rice', 
+    id: 'rice',  // ADD THIS LINE
     emoji: '🌾',
     color: 'bg-gradient-to-br from-emerald-50 via-white to-emerald-50',
     borderColor: 'border-emerald-200',
@@ -89,7 +93,7 @@ export default function Home() {
                 key={crop.name}
                 // CHANGE THIS LINE - ADD CROP SERVICE
                 onClick={() => {
-                  cropService.setCurrentCrop(crop.name.toLowerCase());
+                  cropService.setCurrentCrop(crop.id);  // Use crop.id instead of name
                   navigate('/capture');
                 }}
                 className={`

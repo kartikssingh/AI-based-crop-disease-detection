@@ -82,12 +82,15 @@ class NativeBridge {
         input.click();
     }
     
-    async classifyImage(base64Image) {
+    // UPDATED: Now accepts crop parameter
+    async classifyImage(base64Image, cropType = 'tomato') {
         if (this.isAndroid) {
             try {
-                const result = await window.Android.classifyImage(base64Image);
+                // Pass both image and crop type to Android
+                const result = await window.Android.classifyImage(base64Image, cropType);
                 return JSON.parse(result);
             } catch (error) {
+                console.error('Classification error:', error);
                 return {
                     error: 'Classification failed: ' + error.message,
                     success: false
@@ -95,17 +98,18 @@ class NativeBridge {
             }
         } else {
             // Mock data for browser testing
-            return this.getMockClassification();
+            return this.getMockClassification(cropType); // Pass crop type
         }
     }
     
-    speak(text) {
+    // UPDATED: Accepts language parameter
+    speak(text, language = 'en') {
         if (this.isAndroid) {
-            window.Android.speak(text);
+            window.Android.speak(text, language);
         } else {
             if ('speechSynthesis' in window) {
                 const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'en-US';
+                utterance.lang = this.getLanguageCode(language);
                 window.speechSynthesis.speak(utterance);
             }
         }
@@ -172,21 +176,58 @@ class NativeBridge {
         });
     }
     
-    getMockClassification() {
-        return {
-            success: true,
-            crop: 'tomato',
-            disease: 'Early_blight',
-            confidence: 92,
-            predictions: [
-                { disease: 'Early_blight', confidence: 92 },
-                { disease: 'Late_blight', confidence: 5 },
-                { disease: 'Tomato_healthy', confidence: 3 }
-            ],
-            advice_cause: 'Caused by fungus Alternaria solani. Spread by rain splash.',
-            advice_cure: 'Apply fungicides like azoxystrobin or mancozeb.',
-            advice_suggestions: 'Use mulch to prevent soil splash. Rotate crops.'
+    // UPDATED: Accepts crop type parameter
+    getMockClassification(cropType = 'tomato') {
+        const mockData = {
+            tomato: {
+                success: true,
+                crop: 'tomato',
+                disease: 'Early_blight',
+                confidence: 92,
+                advice_cause: 'Caused by fungus Alternaria solani. Spread by rain splash.',
+                advice_cure: 'Apply fungicides like azoxystrobin or mancozeb.',
+                advice_suggestions: 'Use mulch to prevent soil splash. Rotate crops.'
+            },
+            potato: {
+                success: true,
+                crop: 'potato',
+                disease: 'Late_blight',
+                confidence: 85,
+                advice_cause: 'Caused by fungus Phytophthora infestans.',
+                advice_cure: 'Apply copper-based fungicides.',
+                advice_suggestions: 'Remove infected plants immediately.'
+            },
+            maize: {
+                success: true,
+                crop: 'maize',
+                disease: 'Northern_Leaf_Blight',
+                confidence: 78,
+                advice_cause: 'Caused by fungus Exserohilum turcicum.',
+                advice_cure: 'Apply fungicides with active ingredients like chlorothalonil.',
+                advice_suggestions: 'Plant resistant varieties.'
+            },
+            rice: {
+                success: true,
+                crop: 'rice',
+                disease: 'Bacterial_Leaf_Blight',
+                confidence: 90,
+                advice_cause: 'Caused by bacteria Xanthomonas oryzae.',
+                advice_cure: 'Apply copper-based bactericides.',
+                advice_suggestions: 'Use disease-free seeds.'
+            }
         };
+        
+        return mockData[cropType] || mockData.tomato;
+    }
+    
+    // Helper: Convert language code to SpeechSynthesis format
+    getLanguageCode(lang) {
+        const languageMap = {
+            'en': 'en-US',
+            'hi': 'hi-IN',
+            'te': 'te-IN'
+        };
+        return languageMap[lang] || 'en-US';
     }
 }
 
