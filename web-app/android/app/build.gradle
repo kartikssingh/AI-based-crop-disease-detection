@@ -3,6 +3,17 @@ apply plugin: 'com.android.application'
 android {
     namespace = "com.farmmate.app"
     compileSdk = rootProject.ext.compileSdkVersion
+    
+    // ADD SIGNING CONFIG HERE
+    signingConfigs {
+        release {
+            storeFile file('../farmmate.keystore')
+            storePassword 'farmmate123'
+            keyAlias 'farmmate'
+            keyPassword 'farmmate123'
+        }
+    }
+    
     defaultConfig {
         applicationId "com.farmmate.app"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -11,24 +22,31 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         
-        // ADD THIS for TensorFlow Lite
+        // For TensorFlow Lite
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+        
         aaptOptions {
             noCompress "tflite"
             noCompress "lite"
-            // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
-            // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
     
     buildTypes {
         release {
+            // APPLY SIGNING CONFIG
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     
-    // ADD THIS for Java 8 compatibility (TensorFlow Lite needs it)
+    packagingOptions {
+        pickFirst '**/*.so'
+    }
+    
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -39,7 +57,6 @@ repositories {
     flatDir{
         dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
     }
-    // ADD Maven Central for TensorFlow
     mavenCentral()
 }
 
@@ -50,9 +67,8 @@ dependencies {
     implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
     implementation project(':capacitor-android')
     
-    // ADD THESE TENSORFLOW LITE DEPENDENCIES
-    implementation 'org.tensorflow:tensorflow-lite:2.14.0'
-    implementation 'org.tensorflow:tensorflow-lite-support:0.4.4'
+    // TensorFlow Lite - Use version compatible with Gradle 8.9.1
+    implementation 'org.tensorflow:tensorflow-lite:2.13.0'
     
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"

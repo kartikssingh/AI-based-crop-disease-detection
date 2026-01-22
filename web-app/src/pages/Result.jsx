@@ -28,7 +28,21 @@ export default function Result() {
     advice_suggestions: 'Use mulch to prevent soil splash. Rotate crops regularly. Maintain proper spacing between plants.'
   }
 
-  const displayResult = result || defaultResult
+  // Ensure we have a valid result
+  const displayResult = result && !result.error ? result : defaultResult
+  
+  // Show error message if result has an error
+  const hasError = result && result.error
+  
+  useEffect(() => {
+    if (hasError) {
+      console.error('❌ Result error:', result.error)
+      const errorTimeout = setTimeout(() => {
+        alert('Error in analysis: ' + result.error + '\n\nUsing default results for demonstration.')
+      }, 500)
+      return () => clearTimeout(errorTimeout)
+    }
+  }, [hasError, result])
 
   const handleSpeak = () => {
     if (isSpeaking) {

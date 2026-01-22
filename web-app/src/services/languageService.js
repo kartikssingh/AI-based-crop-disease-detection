@@ -81,6 +81,16 @@ const languageService = {
     translate(key) {
         const lang = this.getCurrentLanguage();
         return translations[lang]?.[key] || key;
+    },
+    
+    // NEW: Helper method to get localized result text
+    getLocalizedText(disease, result, language = 'en') {
+        // For now, return the disease and cure in the provided language
+        // In a full implementation, you would have disease translations
+        return {
+            disease: disease || 'Disease Detected',
+            cure: result.advice_cure || 'Consult local agricultural expert'
+        };
     }
 };
 

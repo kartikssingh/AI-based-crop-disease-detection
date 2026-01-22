@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import { Camera, Upload, Zap, Image, X } from 'lucide-react'
 import nativeBridge from '../services/nativeBridge'
-import cropService from '../services/cropService'  // ADD THIS IMPORT
+import cropService from '../services/cropService'
 
 export default function Capture() {
   const navigate = useNavigate()
@@ -12,80 +12,94 @@ export default function Capture() {
   const [isAnalyzing, setIsAnalyzing] = useState(false)
 
   const handleCapture = () => {
+    console.log('📸 Capture button clicked')
     setSourceType('camera')
     
     nativeBridge.openCamera((base64Image, error) => {
       if (error) {
+        console.error('❌ Camera error:', error)
         alert('Camera error: ' + error)
         return
       }
+      console.log('✅ Image captured from camera, data length:', base64Image ? base64Image.length : 0)
+      console.log('📸 Setting image preview...')
       setImagePreview(base64Image)
     })
   }
 
   const handleGalleryPick = () => {
+    console.log('🖼️ Gallery button clicked')
     setSourceType('gallery')
     
     nativeBridge.openGallery((base64Image, error) => {
       if (error) {
+        console.error('❌ Gallery error:', error)
         alert('Gallery error: ' + error)
         return
       }
+      console.log('✅ Image selected from gallery, data length:', base64Image ? base64Image.length : 0)
+      console.log('🖼️ Setting image preview...')
       setImagePreview(base64Image)
     })
   }
 
   const handleRemoveImage = () => {
+    console.log('🗑️ Removing image')
     setImagePreview(null)
   }
 
-  const handleAnalyze = () => {
+  const handleAnalyze = async () => {
+    console.log('🎯 Analyze button clicked')
+    
     if (!imagePreview) {
+      console.warn('⚠️ No image to analyze')
       alert('Please capture or select an image first')
       return
     }
 
     setIsAnalyzing(true)
     
-    // IMPORTANT: Get the current crop from cropService
+    // Get the current crop from cropService
     const currentCrop = cropService.getCurrentCrop() || 'tomato'
+    console.log('🌱 Current crop from cropService:', currentCrop)
     
-    if (imagePreview.startsWith('data:image')) {
-      // Extract pure base64 string (remove "data:image/jpeg;base64," part)
-      const base64String = imagePreview.split(',')[1]
-      
-      // Call classifyImage with BOTH image data AND crop type
-      nativeBridge.classifyImage(base64String, currentCrop)
-        .then(result => {
+    try {
+      if (imagePreview.startsWith('data:image')) {
+        // Extract pure base64 string (remove "data:image/jpeg;base64," part)
+        const base64String = imagePreview.split(',')[1]
+        console.log('📊 Base64 image string length:', base64String.length)
+        
+        // Call classifyImage with BOTH image data AND crop type
+        console.log('🤖 Calling nativeBridge.classifyImage with crop:', currentCrop)
+        const result = await nativeBridge.classifyImage(base64String, currentCrop)
+        
+        console.log('✅ Classification result:', result)
+        
+        // Check if result has an error
+        if (result && result.error) {
+          console.error('❌ Classification error in result:', result.error)
+          alert('Analysis failed: ' + result.error)
           setIsAnalyzing(false)
-          // Pass both result and crop to Result page
-          navigate('/result', { 
-            state: { 
-              result, 
-              image: imagePreview,
-              crop: currentCrop  // ADD THIS
-            } 
-          })
+          return
+        }
+        
+        setIsAnalyzing(false)
+        // Pass both result and crop to Result page
+        navigate('/result', { 
+          state: { 
+            result, 
+            image: imagePreview,
+            crop: currentCrop
+          } 
         })
-        .catch(error => {
-          setIsAnalyzing(false)
-          alert('Analysis failed: ' + error.message)
-          console.error('ML Analysis Error:', error)
-        })
-    } else {
+      } else {
+        console.warn('⚠️ Image preview format unexpected')
+        throw new Error('Invalid image format')
+      }
+    } catch (error) {
+      console.error('❌ Classification failed:', error)
       setIsAnalyzing(false)
-      // Fallback to dummy data for testing
-      navigate('/result', { 
-        state: { 
-          result: { 
-            disease: 'Early Blight',
-            confidence: '85%',
-            treatment: 'Apply fungicide spray'
-          },
-          image: imagePreview,
-          crop: currentCrop
-        } 
-      })
+      alert('Analysis failed: ' + (error.message || 'Unknown error'))
     }
   }
 
